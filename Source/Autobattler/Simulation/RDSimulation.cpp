@@ -5,11 +5,11 @@
 int RDSimulation::Range(int Min, int Max)
 {
 	if (Min > Max) std::swap(Min, Max);
-	std::uniform_int_distribution<int> Dist(Min, Max);
+	std::uniform_int_distribution Dist(Min, Max);
 	return Dist(Generator);
 }
 
-HexCoordinate RDSimulation::RandomHexCoordinate(int Radius)
+HexCoordinate RDSimulation::RandomHexCoordinate(const int Radius)
 {
 	std::vector<HexCoordinate> ValidCoords;
 	for (int q = -Radius; q <= Radius; q++)
