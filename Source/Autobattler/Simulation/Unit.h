@@ -7,7 +7,7 @@
 class HexGrid;
 struct HexCoordinate;
 
-enum class ETeamColor
+enum class ETeamColor : uint8
 {
 	None,
 	

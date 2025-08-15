@@ -255,3 +255,13 @@ int BattleSimulation::GenerateUnitId()
 {
     return NextUnitId++;
 }
+
+SimulationState BattleSimulation::GetCurrentState() const
+{
+    SimulationState state;
+    state.CurrentStep = CurrentStep;
+    state.CurrentSimTime = CurrentSimTime;
+    state.bIsFinished = bIsFinished;
+    state.Winner = Winner;
+    return state;
+}

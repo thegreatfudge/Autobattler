@@ -3,8 +3,6 @@
 #include "RDSimulation.h"
 #include "Unit.h"
 
-enum class ETeamColor;
-
 struct SimulationConfig
 {
 	int GridRadius = 8;
@@ -48,6 +46,11 @@ public:
 
 	HexCoordinate FindEmptyPosition();
 	int GenerateUnitId();
+
+	SimulationState GetCurrentState() const;
+
+	const std::unordered_map<int, std::unique_ptr<Unit>>& GetUnits() const { return Units; }
+	const HexGrid& GetGrid() const { return Grid; }
 private:
 	HexGrid Grid;
 	std::unordered_map<int, std::unique_ptr<Unit>> Units;
