@@ -68,6 +68,12 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Effects")
     void PlayDeathEffect();
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "Effects")
+    void OnAttack();
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "Effects")
+    void OnDeath();
+
 private:
     FVector TargetPosition;
     UPROPERTY()
